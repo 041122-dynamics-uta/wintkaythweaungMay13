@@ -1,2 +1,49 @@
 
-Good Life `
+The Good Life
+Each of five neighborhood dogs (Saber, Ginger, Nutmeg, Pepper, and Bear)
+
+ 
+getting its ears scratched, playing catch, taking a nap, burying a chew toy, and going for a walk.
+
+Case 1: Pepper is either playing catch or burying a chew toy.
+   Pepper -  [ Playing catch] or[ burying a chew toy ]
+
+Case 2 :Neither Ginger nor Saber nor Bear is on a walk.
+    walking -[ Nutmeg ]or [Pepper ]
+
+Case 3 .One of the dogs named after a spice is getting its ears scratched.
+     Ears scartched : [Sabar] or [bear] // not the spice name
+( Reason : one of the dogs names after a 
+     spice name is Bear which is not the spice name )
+	
+Case 4 .A dog not named for a spice is playing catch.
+
+	Playing Catch :  Sabar or bear 
+      ( if sabar playing catch , bear should be ears scartch)
+      ( if bear ears scarthing , sabar should be playing catch)
+
+5  .Bear is getting some exercise.
+   Base one the condition (4) and (5) Bear is doing exercising .
+   Ears scratching is not the excercise thats the reason bear is playing catch .
+                            
+       Bear : Playing Catch
+	Sarbar : Ears Scartching 
+          ( playing catch is taken thats why) + case 1 
+       Pepper is burying a chew toy
+
+        Bear :Playing Catch
+	  Sabar :Ears Scaratching
+	  Pepper :burying a chew toy 
+
+	    ( ginger is not walking, only one activity left taking a nap)
+
+        Bear   :	Playing Catch
+	  Sabar  :	Taking Nap
+	  Pepper :	burying a chew toy 
+	  Ginger : 	taking a nap
+	  Nutmeg : 	walking
+
+ 
+
+
+
