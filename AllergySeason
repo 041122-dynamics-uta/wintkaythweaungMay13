@@ -1,0 +1,29 @@
+Allegra, Ben ,Clara,Flora ,Zach  
+
+Allergies : Pollen , Shellfish ,bee Stings ,cats ,nuts 
+
+case 1 : Allegra has food allergy 
+
+  Allegra: Shellfish , nuts
+
+case 2 : Ben can play with his kitten for hours without issue or medicine.
+    Ben : Pollen ,nuts ,bee stings , shellfish 
+
+Case 3 : Clara allergy is not related to animals 
+
+      Clara : Pollen , nuts
+
+case 4 : Flora has seaonal allergies.
+      
+      Flora : Pollen   ,  
+
+
+if( Flora = Pollen ) 
+            
+	    {Clara= nuts ; case 4 catch
+	    Ben = Bee stings//  case 1 catch
+	    Allegra=Shellfish // case 4 and case  3  catch 
+
+
+	    Answer {  Flora=pollen , clara=nuts , ben=bee stings , Allegra=Shellfish ,Zach = Bee Stings }  
+
