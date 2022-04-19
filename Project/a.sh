@@ -1,6 +1,6 @@
 #!/bin/bash
  echo Welcome to the bash demo! 
- echo Please choose the your function under their beloning numbers.
+ echo Please choose the function under their beloning numbers.
 
 add()
 {
