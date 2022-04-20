@@ -2,27 +2,7 @@
  echo Welcome to the bash demo! 
  echo Please choose the function under their beloning numbers.
 
-add()
-{
-    input=$((num1 + num2))
-    end
-}
-subtract()
-{
-    input=$((num1 - num2))
-    end
-}
-multiply()
-{
-    input=$((num1 * num2))
-    end
-}
-divide()
-{
-input=$((num1 / num2))
-    end
-    
-}
+
 
 if [[ $# -eq 1 ]] ; then    ### First Prority make  it continue the Display function 
     
@@ -45,23 +25,23 @@ echo Plase choose the number of the belonging function for your desire !!!!!
     case $choice in
     1) 
         echo ----------------------------------------
-        echo The result : Addition of $num1 and $num2 is add . #call the add function
+        echo The result : Addition of $num1 and $num2 is  $(( num1 + num2 )) . #call the add function
         echo ----------------------------------------
         echo  ;;
 
     2)
         echo ----------------------------------------
-        echo The result : Subtraction of $num1 and $num2 is substract . # call the substract function
+        echo The result : Subtraction of $num1 and $num2 is $(( num1 - num2 )) . # call the substract function
         echo ----------------------------------------
         echo  ;;
     3)
         echo ----------------------------------------
-        echo The result : Multiplication of $num1 and $num2 is multiply  .#call the multiply function
+        echo The result : Multiplication of $num1 and $num2 is  $(( num1 * num2 ))  .#call the multiply function
         echo ----------------------------------------
         echo;;
      4) 
     echo ----------------------------------------
-        echo The result : Division of $num1 and $num2 is divide  .# call the divide function
+        echo The result : Division of $num1 and $num2 is $(( num1 / num2 ))  .# call the divide function
         echo ----------------------------------------
         echo ;;
     
@@ -96,7 +76,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Addition of $num1 and $num2 is add   # call the fuction again 
+            echo Addition of $num1 and $num2 is $(( num1 + num2))   # call the fuction again 
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 2 ]] ; then
@@ -106,7 +86,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Subtraction of $num1 and $num2 is substract.
+            echo Subtraction of $num1 and $num2 is $(( num1 - num2 )).
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 3 ]] ; then
@@ -116,7 +96,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Pleae enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Multiplication of $num1 and $num2 is multiply .
+            echo Multiplication of $num1 and $num2 is $(( num1 * num2 )) .
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 4 ]] ; then
@@ -126,7 +106,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Pleae enter your second number!!!
             read num2
             echo -----------------------------------------
-            echo Division of $num1 and $num2 is divide
+            echo Division of $num1 and $num2 is $(( num1 / num2 )) .
             echo -----------------------------------------
             echo
         elif [[ $choice -eq 5 ]] ; then

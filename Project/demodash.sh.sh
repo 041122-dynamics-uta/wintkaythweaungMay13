@@ -3,7 +3,7 @@
  echo Please choose the your function under their beloning numbers.
 
 
-if [[ $# -eq 0 ]] ; then
+if [[ $# -eq 2 ]] ; then
     
     num1=$1
     num2=$2
