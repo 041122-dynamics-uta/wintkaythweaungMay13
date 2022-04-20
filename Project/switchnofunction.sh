@@ -12,7 +12,7 @@ if [[ $# -eq 1 ]] ; then    ### First Prority make  it continue the Display func
    
 echo Plase choose the number of the belonging function for your desire !!!!!
 
-    echo 1. Ad[[ $# - eq 4 ]]dition
+    echo 1. Addition
     echo 2. Subtraction
     echo 3. Multiplication
     echo 4. Division
