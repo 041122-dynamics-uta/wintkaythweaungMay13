@@ -1,0 +1,40 @@
+Presidents Day:
+George, William, John, Abe, and Millard have their birthdays on consecutive days, all between Monday and Friday.
+Case 1 : George’s birthday is as many days before Millard’s and William’s is after Abe’s.
+
+   George ++++++ > Millard  
+   Abe < William 
+ 
+Case  2 :John is two days older than Abe.
+        John +2 < Abe 
+Case  3  : Millard’s birthday is on Thursday.
+
+  			Millard : Thursday 
+
+      Mon	 Tue  	Wed 		Thurs 	 Fri
+	    				     Millard
+----------------------------------------------------------------
+case 2 :
+      Try 1  [ John for Wededesday older 2 day than Abe
+
+ 	Mon	 Tue  	Wed 		Thurs 	 Fri
+          		John		Millard  Abe     
+-------------------------------------------ERROR---------------------
+Rason: William is after Abe , can't put john on wednesday cuz of william (case 1)
+can't put john on tuesday coz abe is far way two day suppose (case 1)to be Thursday but Millard is thursday(case 3)
+so Monday is the only day for Johh
+   
+
+case 1 : william is after abe :  Thursday is placed by Millard Only Firday for WILLIAM 
+
+ 	Mon	 Tue  	Wed 		Thurs 	 Fri
+      John  		Abe		Millard     William
+
+
+The final result is one day left and one person its George for Tuesday 
+
+	Mon	 Tue  	Wed 		Thurs 	 Fri
+      John   George	Abe		Millard     William
+
+--------------------------------------------------------------
+Run the condition { case :1 - succeed  , case 2 : succeed , Case :3 Succeed ,

@@ -1,0 +1,36 @@
+Summer Camp
+Abigail, Oliver, Rosa, and Blake all attend the same summer camp,
+ where they can cook, kayak, rock climb, and zip-line. Each child has a different favorite activity.
+Case 1 : Abigail’s favorite activity isn’t rock climbing.
+         Abigail : cook , kayak ,zip-line
+             
+Case 2 : Oliver is afraid of heights.
+         Oliver : cook , kayak
+         
+ 		Abigial : cook , kayak ,zip line 
+		Oliver  : cook , kayak 
+
+Case 3 : Rosa can’t do her favorite activity without a harness.
+
+         Rose: Rock Claiming ( Reason : without a harness )
+    
+Case 4 : Blake likes to keep his feet on the ground at all times.
+         Blake is cook ( it the only reason to put his feet on the ground 
+              
+		Rosa : Rock Claiming 
+		Balke : Cook
+		 as Case 4 : blake is cooking < kayak>is only for oliver
+		
+		Oliver  : kayak  
+			
+			the only left is Zip-line for Abilgail
+           
+		Rosa	  : Rock Claimbing 
+		Blake	  : Cook
+		Oliver  : Kayak
+		Abigial : Zip-line
+             
+
+
+
+

@@ -1,0 +1,32 @@
+Alegra ,Ben , Clara , Flora ,Zach 
+
+Pollen , shellfish , bee stings , cats ,nuts 
+
+case 1 : Allegra has a food allergy
+       Allegra : Shellfish or nuts 
+
+
+case 2 : Ben Can Play with his kitten for hours without issue or medicine
+        Ben : Pollen , Shellfish ,beestings, nuts 
+
+case 3 : Clara 's allergy is not related to animals
+         clara : Pollen , nuts 
+
+case 4 : Flora has seasonal allergies 
+            Flora: Pollen 
+    
+   if (Flora= Pollen )
+          
+	  calran = nuts ,
+	     
+	      ben =shellfish , beestings ,
+
+	       try (ben= shellfish ) 
+	             
+		  catch"   Allegra = nut "result is false" 
+                       
+		       ben = bee stings 
+
+		        
+Answer { Flora =Pollen , calra = nuts , ben= bee stings , Allegra= shellfish , zach =cat }
+		     
