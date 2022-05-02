@@ -19,34 +19,34 @@ echo Plase choose the number of the belonging function for your desire !!!!!
     echo Hi ! Please enter your choosen number !
     read choice
     # start computing
-    if [[ $choice -eq 1 ]] ; then
-        echo ----------------------------------------
-        echo The result : Addition of $num1 and $num2 is $((num1+num2))
-        echo ----------------------------------------
-        echo
-    elif [[ $choice -eq 2 ]] ; then
-        echo ----------------------------------------
-        echo The result : Subtraction of $num1 and $num2 is $((num1-num2))
-        echo ----------------------------------------
-        echo
-    elif [[ $choice -eq 3 ]] ; then
-        echo ----------------------------------------
-        echo The result : Multiplication of $num1 and $num2 is $((num1*num2))
-        echo ----------------------------------------
-        echo
-    elif [[ $choice -eq 4 ]] ; then
-        echo ----------------------------------------
-        echo The result : Division of $num1 and $num2 is $((num1/num2))
-        echo ----------------------------------------
-        echo
-    elif [[ $choice -eq 5 ]] ; then
-        exit
-    else
-        echo ----------------------------------------
-        echo Invalid choice or system does not support for enter number!!!!
-        echo ----------------------------------------
-        echo
-    fi
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  # this gonna gonnna run for unless option until to choose 5 to exit
 elif [[ $# -eq 0 ]] ; then
     while true

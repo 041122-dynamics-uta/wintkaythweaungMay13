@@ -67,7 +67,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Addition of $num1 and $num2 is $((num1+num2))
+            echo The result : Addition of $num1 and $num2 is $((num1+num2)) .
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 2 ]] ; then
@@ -77,7 +77,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Subtraction of $num1 and $num2 is $((num1-num2))
+            echo Subtraction of $num1 and $num2 is $((num1-num2)) .
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 3 ]] ; then
