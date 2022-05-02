@@ -4,7 +4,7 @@
 
 
 
-if [[ $# -eq 1 ]] ; then    ### First Prority make  it continue the Display function 
+if [[ $# -eq 2 ]] ; then    ### First Prority make  it continue the Display function 
     
     num1=$1
     num2=$2
@@ -50,8 +50,9 @@ echo Plase choose the number of the belonging function for your desire !!!!!
         echo ----------------------------------------
         echo Invalid choice or system does not support for enter number!!!!
         echo ----------------------------------------
-        echo
-    ;;
+        echo ;;
+    6)
+    
     esac
 
     
@@ -76,7 +77,7 @@ elif [[ $# -eq 0 ]] ; then
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Addition of $num1 and $num2 is $(( num1 + num2))   # call the fuction again 
+            echo Addition of $num1 and $num2 is $(( num1 + num2))    
             echo ----------------------------------------
             echo
         elif [[ $choice -eq 2 ]] ; then

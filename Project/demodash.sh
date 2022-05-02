@@ -19,34 +19,34 @@ echo Plase choose the number of the belonging function for your desire !!!!!
     echo Hi ! Please enter your choosen number !
     read choice
     # start computing
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    if [[ $choice -eq 1 ]] ; then
+        echo ----------------------------------------
+        echo The result : Addition of $num1 and $num2 is $((num1+num2))
+        echo ----------------------------------------
+        echo
+    elif [[ $choice -eq 2 ]] ; then
+        echo ----------------------------------------
+        echo The result : Subtraction of $num1 and $num2 is $((num1-num2))
+        echo ----------------------------------------
+        echo
+    elif [[ $choice -eq 3 ]] ; then
+        echo ----------------------------------------
+        echo The result : Multiplication of $num1 and $num2 is $((num1*num2))
+        echo ----------------------------------------
+        echo
+    elif [[ $choice -eq 4 ]] ; then
+        echo ----------------------------------------
+        echo The result : Division of $num1 and $num2 is $((num1/num2))
+        echo ----------------------------------------
+        echo
+    elif [[ $choice -eq 5 ]] ; then
+        exit
+    else
+        echo ----------------------------------------
+        echo Invalid choice or system does not support for enter number!!!!
+        echo ----------------------------------------
+        echo
+    fi
  # this gonna gonnna run for unless option until to choose 5 to exit
 elif [[ $# -eq 0 ]] ; then
     while true
@@ -60,74 +60,46 @@ elif [[ $# -eq 0 ]] ; then
         echo Enter your choice:
         read choice
         # get operands and start computing based on the user's choice
-        
-        
-    add ()
-    {
-      echo You choose to add the numbers !!!!!!!
+        if [[ $choice -eq 1 ]] ; then
+            echo You choose to add the numbers !!!!!!!
             echo Enter your first number!!!
             read num1
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Addition of $num1 and $num2 is $((num1 + num2)) .
+            echo The result : Addition of $num1 and $num2 is $((num1+num2)) .
             echo ----------------------------------------
-            echo   
-    }
-    
-substract ()
-    {
+            echo
+        elif [[ $choice -eq 2 ]] ; then
         echo You choose to substract the numbers !!!!!!!
             echo Enter your first number!!!
             read num1
             echo Enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Subtraction of $num1 and $num2 is $((num1 - num2))  .
+            echo Subtraction of $num1 and $num2 is $((num1-num2)) .
             echo ----------------------------------------
             echo
-      
-    }
-    multiply ()
-    {
+        elif [[ $choice -eq 3 ]] ; then
         echo You choose to multiply the numbers !!!!!!!
             echo Pleae enter your first number!!!
             read num1
             echo Pleae enter your second number!!!
             read num2
             echo ----------------------------------------
-            echo Multiplication of $num1 and $num2 is $((num1 * num2)) .
+            echo Multiplication of $num1 and $num2 is $((num1*num2))
             echo ----------------------------------------
             echo
-          
-
-    }
-    divide ()
-    {
-        echo You choose to divide the numbers !!!!!!!
+        elif [[ $choice -eq 4 ]] ; then
+            echo You choose to divide the numbers !!!!!!!
             echo Pleae enter your first number!!!
             read num1
             echo Pleae enter your second number!!!
             read num2
             echo -----------------------------------------
-            echo  Division of $num1 and $num2 is  $((num1 / num2)) .
+            echo Division of $num1 and $num2 is $((num1/num2))
             echo -----------------------------------------
             echo
-        
-        
-
-    }
-
-        if [[ $choice -eq 1 ]] ; then
-
-           add
-
-        elif [[ $choice -eq 2 ]] ; then
-          substract
-        elif [[ $choice -eq 3 ]] ; then
-        multiply
-        elif [[ $choice -eq 4 ]] ; then
-            divide
         elif [[ $choice -eq 5 ]] ; then
             exit
         else
