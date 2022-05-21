@@ -18,9 +18,9 @@ namespace dotnetconsole_SweetnSalty
        for (int i=1;i<=n;i++)
        {
          string s="";
-         string result1;
-         string result2;
-         string result3;
+         string result1=0;
+         string result2=0;
+         string result3=0;
 
          if(i==a)
          {
