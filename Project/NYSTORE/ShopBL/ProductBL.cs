@@ -20,11 +20,7 @@ namespace ShopBL
         List<Product> ml = _repo.ProductList();
         return ml;
     }
-    // public List<Product> SelectByLocation()
-    // {
-    //     List<Product> ml = _repo.SelectByLocation();
-    //     return ml;
-    // }
+   
     
     public Product NewProduct(string ProductBrand, string Category, string UnitPrice, string Quantity,string Location)
     {
@@ -38,14 +34,15 @@ namespace ShopBL
         Product m = _repo.UpdateByProduct(ProductBrand, Category, UnitPrice, Quantity ,location);
         return m;
     }
+    public Product P_QuantityUpdate( string Quantity,string ProductBrand)
+    {
+        //pass the new data to the repo layer to insert int to the db.
+        Product m = _repo.UpdateByProductQuantity(Quantity,ProductBrand );
+        return m;
+    }
     
-    //  public Product Selectid (string ProductID,string CustomerID,string UnitPrice,string Quantity,string location)
-    // {
-    //     //pass the new data to the repo layer to insert int to the db.
-    //     Product m = _repo.SelectByProductID(ProductID,CustomerID,UnitPrice,Quantity,location);
-    //     return m;
-    // }
-   
+    
+    
 
 
 

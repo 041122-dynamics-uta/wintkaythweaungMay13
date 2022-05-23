@@ -48,44 +48,50 @@ namespace ShopDL
     }
    
     
-      public Order NewOrder(string ProudctID,string CustomerID,string UnitPrice,string Quanity,string Location)
-    {   string query= $" ";
-        string myQuery1 = $"INSERT INTO Customer (FirstName, LastName, UserName, Password,Email) VALUES (@f, @l, @u, @p,@e);";
-  
+      public Order NewOrder(string productID,string customerID,string unitprice,string quantity,string location)
+    {
+        // string myQuery2 = $"select CustomerID from Customer where CustomerID=@v;";
+        // string myQuery3 = $"select ProductID rom Product where ProductID=@n;";
+        string myQuery1 = $"INSERT INTO Orders (ProductID, CustomerID, Amount, Quantity,Location) VALUES (@n, @v, @p, @Q,@L);";
+ 
+ 
+        //this using block creates teh SqlConnection.
+        // the SqlConnection is the object that communicates with the Db.
         using (SqlConnection query1 = new SqlConnection(connectionString))
         {
+            //The SqlCommand object uses the query text along with the SqlConnection object to open a connection and send the query.
             SqlCommand command = new SqlCommand(myQuery1, query1);
-            command.Parameters.AddWithValue("@f", ProudctID);
-            command.Parameters.AddWithValue("@l", CustomerID);
-            command.Parameters.AddWithValue("@u", UnitPrice);
-            command.Parameters.AddWithValue("@p", Quanity);
-            command.Parameters.AddWithValue("@e", Location);
+            command.Parameters.AddWithValue("@n", productID);
+            command.Parameters.AddWithValue("@v", customerID);
+            command.Parameters.AddWithValue("@p", unitprice);
+            command.Parameters.AddWithValue("@Q", quantity);
+            command.Parameters.AddWithValue("@L", location);
+            query1.Open();//open the connection to the Db
+            int results = command.ExecuteNonQuery();//actually conduct the query.
+            query1.Close();//YOU MUST CLOSE THE CONNECTION FOR ANY OTHER METHOD TO ACCESS THE DB.
 
-            query1.Open();
-            int results = command.ExecuteNonQuery();
-            query1.Close();
+            // I usually requery the Db to get the data fresh and triple verify that the data was inputted correctly
 
             if (results == 1)
             {
-                Order m = new Order
+                Order order = new Order
                 {
                     OrderID = 100,
-                    ProductID = Int32.Parse(ProudctID),
-                    CustomerID =Int32.Parse(CustomerID),
-                    UnitPrice = Int32.Parse(UnitPrice),
-                    Quantity = Int32.Parse(Quanity),
-                    location = Location
-                    
-                    
+                    ProductID = Int32.Parse(productID),
+                    CustomerID=Int32.Parse(customerID),
+                    UnitPrice=Int32.Parse(unitprice),
+                    Quantity=Int32.Parse(quantity),
+                    location=location
+                        
                 };
-                return m;
+                return order;
             }
             return null;
 
         };
     }
+     
    
-
-
+   
     }
 }

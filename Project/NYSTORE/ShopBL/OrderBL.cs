@@ -19,11 +19,20 @@ namespace ShopBL
         List<Order> ml = _repo.OrderList();
         return ml;
     }
+    
      public Order NewOrder(string ProductID,string CustomerID,string UnitPrice,string Quantity,string location)
     {
         //pass the new data to the repo layer to insert int to the db.
         Order m = _repo.NewOrder(ProductID,CustomerID,UnitPrice,Quantity,location);
         return m;
     }
+    // public Order SlectByProductID(string ProductID,string CustomerID,string UnitPrice,string Quantity,string location)
+    // {
+    //     //pass the new data to the repo layer to insert int to the db.
+    //     Order m = _repo.SelectByProductID(ProductID,CustomerID,UnitPrice,Quantity,location);
+    //     return m;
+    // }
+   
     }
+    
 }

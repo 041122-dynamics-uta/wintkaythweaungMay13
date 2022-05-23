@@ -28,8 +28,9 @@ namespace UI
             customer = customerBL.UpdateCustomerByID(fname, lname, username,password, email);
             Console.WriteLine ("Successfull Saved!!!!");
             Console.WriteLine($" {customer.fname} {customer.lname} Successfully saved for your new update!!! .");
-        } 
+          } 
         public  void Placeorder()
+        
         {
             
              ProductRepo productRepo=new ProductRepo();
@@ -42,74 +43,99 @@ namespace UI
             foreach (Product m in product )
             {
                   //Console.WriteLine($"BrandName: ||   Category :  {m.Catgory}    ||    UnitPrice :  {m.UnitPrice}   || Quantity : {m.Quantity}");
-                Console.WriteLine ("Do you want to buy this prorduct/n");
-                Console.WriteLine ("Please press yes or no");
+                Console.WriteLine ("Do you want to buy this prorduct?\n");
+                
+                 Console.WriteLine ("Please press yes or no\n");
              Console.WriteLine("================================================\n");
                 Console.WriteLine($"Product ID  - [{m.ProductID}] ");
                  Console.WriteLine($"Brand Name - [{m.ProductBrand}] ");
                 Console.WriteLine($"Category   - [{m.Catgory}] ");
                 Console.WriteLine($"Unit Price - [{m.UnitPrice}] ");
                 Console.WriteLine($"Quanity    - [{m.Quantity}] ");
-                Console.WriteLine($"Location   - [{m.location}]");
-                 Console.WriteLine("================================================/n");
-                  Console.WriteLine ("Please press yes or no");
-
-                string answer= Console.ReadLine();
-                while (true)
-                if ( answer == "yes" || answer == "Yes" || answer == "YES")
-                {  string productID= "1";
-
-                  Console.WriteLine("Plese enter CustomerID");
-                  string orderCusomerID=Console.ReadLine();
-                  Console.WriteLine("Plese enter username");
-                  string uname=Console.ReadLine();
-                  string name=m.ProductBrand;
-                  string cat=m.Catgory;;
-                  string Price=Convert.ToString(m.UnitPrice);
-                  int price= Int32.Parse(Price);
-                  Console.WriteLine("Please type your Quantity");
-                  string qtystring=Console.ReadLine();
-                  int qty =Int32.Parse(qtystring);
-                  if (qty> m.Quantity)
-                  {
-                    Console .WriteLine("plase enter the only availbe qty");
-                    
-                  }
-                  else if (price>500)
-                  {
-                      Console .WriteLine("Please choose the the unitprice which is under 500");
-                  }
-                   string locate=m.location;
-                order=orderBL.NewOrder(productID,orderCusomerID,Price,qtystring,locate);
-                 Console.WriteLine ("Successfull Saved!!!!");
-                Console.WriteLine($" You bought  {productID} : {name}  with {Price} from {locate}store! .");
-      
-
-                  
-               
-
-
-                }
-                else  {
-                    Console.WriteLine("you didcedie not to shop");}
-                 
-                    Console.WriteLine($" {newProduct.CustomerID} {newProduct.ProductID} {newProduct.ProductBrand} {newProduct.UnitPrice} {newProduct.Quantity}  {newProduct.location}.From now!  You are one of our regular customer list .");
-              
-            } return false;
- 
-            }
-           
-
-              
-           
-
-
-
-
+                Console.WriteLine($"Location   - [{m.location}]\n");
+                 Console.WriteLine("================================================\n");
             
+                
+               
+                 string answer= Console.ReadLine();
+            if ( answer == "yes" || answer == "Yes" || answer == "YES")
+              {  
+                List <Order> products = orderBL.OrderList();
+                List<Product>pp=productBL.ProductList();
+                          
+                 Console.WriteLine("Plese enter ProductID");
+                  string pid=Console.ReadLine();
+                  Console.WriteLine("Plese enter CustomerID");
+                 string orderCusomerID=Console.ReadLine();
+                  Console.WriteLine("Please enter the quantity");
+                 string qty =Console.ReadLine();
+                 int qtychange=Int32.Parse(qty);
+                  if (qtychange>m.Quantity)
+                     {
+                        Console.WriteLine("pelase enter the available amount");
+                     }
+                  Console.WriteLine("Please enter the price");
+                  string ppp =Console.ReadLine();
+                  Console.WriteLine("Please enter the location");
+                  string ll =Console.ReadLine();
+                  string quantity=Convert.ToString(qtychange);
+                  string price=Convert.ToString(m.UnitPrice);
+                  order =orderBL.NewOrder(pid,orderCusomerID,ppp,quantity,ll);
+                  string diff= Convert.ToString(m.Quantity-qtychange);
+                 // Console.WriteLine ($" different is {diff}");
+                  Console.WriteLine("===================after Making order ===========================\n");
+                  Console.WriteLine("=================   This is the list in you cart    ==========\n");
+                 
+                 newProduct = productBL.P_QuantityUpdate(diff,m.ProductBrand);
+                 
+                 Console.WriteLine($"ProductID - [{pid} ]");
+                 Console.WriteLine($"CustomerID - [{orderCusomerID} ]");
+                 Console.WriteLine($"UnitPrice - [{ppp} ]");
+                 Console.WriteLine($"Quantity - [{quantity} ]");
+                 Console.WriteLine($"Location - [{ll} ]");
+                  Console.WriteLine("=================   This is the list in you cart    ==========\n");
+                   Console.WriteLine("=================   This is the item left from inventory cart ==========\n");
+               
+                Console.WriteLine($" Product Brand    -[{(m.ProductBrand )}]");
+                Console.WriteLine($" Categeory        -[{(m.Catgory )}]");
+                Console.WriteLine($" Price            -[{(ppp )}]");
+                Console.WriteLine($"Availble Quanity  -[{( diff)}]");
+                Console.WriteLine($"Location          -[{( ll )}]");
+                newProduct = productBL.ProductUpdate(m.ProductBrand,m.Catgory,ppp,diff,ll);
+                newProduct = productBL.P_QuantityUpdate(diff,m.ProductBrand);
+                 Console.WriteLine("=================   This is the item left from inventory cart    ==========\n");
+                 
+               // Console.WriteLine ($"Brand:{pid}ID:{orderCusomerID}Price:{ppp}Quantity:{quantity}Location{ll}");
+                Console.WriteLine("=================You made an order ! ========================\n");
+                //Console.WriteLine($"Quantity -[{(diff )}]");
+               // Console.WriteLine($"[{(m.ProductBrand )}]");
+                     
+
+
+                 }
+                
+                 
+                  
+          }
+            
+
+                                
+                          
             }
+              
+           
+      } 
       
 
+              
+           
 
-        }
-    }
+}
+
+          
+
+      
+
+    
+        
+
