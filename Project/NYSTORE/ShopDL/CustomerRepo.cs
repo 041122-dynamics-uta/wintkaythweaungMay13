@@ -80,7 +80,7 @@ public CustomerRepo()
     }
     public Customer UpdateByCustomerID(string fname,string lname,string username,string password,string email)
    {
-        string myQuery1 = $"UPDATE [dbo].[Customer] SET FirstName=@f,LastName=@l, UserName=@u,Password=@p,Email=@e WHERE FirstName=@f;";
+        string myQuery1 = $"UPDATE [dbo].[Customer] SET FirstName=@f,LastName=@l, UserName=@u,Password=@p,Email=@e WHERE UserName=@u;";
         using (SqlConnection query1 = new SqlConnection(connectionString))
         {
             SqlCommand command = new SqlCommand(myQuery1, query1);
@@ -103,8 +103,6 @@ public CustomerRepo()
                     username = username,
                     password = password,
                     email = email
-                    
-                    
                 };
                 return m;
             }

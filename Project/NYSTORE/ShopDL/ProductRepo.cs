@@ -69,7 +69,7 @@ namespace ShopDL
     {
        
         
-         string myQuery1 = $"Update  Order SET Brand=@, Category=@V, UnitPrice=@P, Quantity=@Q ,Location=@L WHERE Brand=@n ;";
+         string myQuery1 = $"Update  Product SET Brand=@n, Category=@v, UnitPrice=@p, Quantity=@Q ,Location=@L where Brand=@n and Category=@v;";
          //string myQuery1=$"Insert into Order ((ProductID,CustomerID,UnitPrice,Quantity,Location)Values(Select Product.ProductID ,Customer.CustomerID, Product.UnitPrice,Product.Quantity,Product.Location from Customer cross join Product) ;";
       
          using (SqlConnection query1 = new SqlConnection(connectionString))
@@ -96,6 +96,49 @@ namespace ShopDL
                 {
                     ProductID = 100,
                     ProductBrand = ProductBrand,
+                    Catgory=Catgory,
+                    UnitPrice=Int32.Parse(UnitPrice),
+                    Quantity=Int32.Parse(Quantity)
+             
+                                
+                    
+                };
+                return p;
+            }
+            return null;
+
+        };
+    }
+     public Product UpdateByProductQuantity(string Quantity,string ProductBrand)
+    {
+       
+        
+         string myQuery1 = $"Update  Product SET  Quantity=(@Q-Quantity)  WHERE Brand=@b;";
+         //string myQuery1=$"Insert into Order ((ProductID,CustomerID,UnitPrice,Quantity,Location)Values(Select Product.ProductID ,Customer.CustomerID, Product.UnitPrice,Product.Quantity,Product.Location from Customer cross join Product) ;";
+      
+         using (SqlConnection query1 = new SqlConnection(connectionString))
+        {
+            //The SqlCommand object uses the query text along with the SqlConnection object to open a connection and send the query.
+            SqlCommand command = new SqlCommand(myQuery1, query1);
+          
+            command.Parameters.AddWithValue("@Q", Quantity);
+               command.Parameters.AddWithValue("@b", Quantity);
+             
+            
+            
+
+            query1.Open();//open the connection to the Db
+            int results = command.ExecuteNonQuery();//actually conduct the query.
+            query1.Close();//YOU MUST CLOSE THE CONNECTION FOR ANY OTHER METHOD TO ACCESS THE DB.
+
+            // I usually requery the Db to get the data fresh and triple verify that the data was inputted correctly
+
+            if (results == 1)
+            {
+                Product p = new Product
+                {
+                    ProductID = 100,
+                    
                  
                                 
                     
@@ -106,6 +149,8 @@ namespace ShopDL
 
         };
     }
+    
+    
     
      public IDataReader SelectByProductID(string ProductID,string CustomerID,string UnitPrice,string Quantity,string location)
      {
@@ -156,7 +201,7 @@ namespace ShopDL
    
     public List<Product> selectbyid()
     {
-        string myQuery1 = "SELECT * FROM Product where Location=@Location;";
+        string myQuery1 = "SELECT * FROM Product where ProductID= '{ProductID}';";
         //this using block creates teh SqlConnection.
         // the SqlConnection is the object that communicates with the Db.
         using (SqlConnection query1 = new SqlConnection(connectionString))
