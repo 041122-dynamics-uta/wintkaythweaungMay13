@@ -94,6 +94,32 @@ namespace UI
                  Console.WriteLine($"Quantity - [{quantity} ]");
                  Console.WriteLine($"Location - [{ll} ]");
                   Console.WriteLine("=================   This is the list in you cart    ==========\n");
+                 int p1= Int32.Parse(ppp);
+                 int qq=Int32.Parse(quantity);
+                 int inttotal= (p1*qq);
+                 string total = Convert.ToString(inttotal);
+                  Console.WriteLine($"TotalAmount -[{total}    ] ");
+                   Console.WriteLine("==================  WELCOME MEMBER  ============\n");
+                Console.WriteLine("Please select from the list of options below:\n");
+                Console.WriteLine("[1] - Continue to shop ");
+                Console.WriteLine("[2] - Ready to checkout ");
+                Console.WriteLine("================================================\n");
+                string again= Console .ReadLine();
+                
+                switch (again)
+                {
+                  case "1":
+                    IMenu menu=new IMenu();
+                    menu.Placeorder();
+                  break;
+                  case "2":
+                    Program p=new Program();
+                  break;
+
+                }
+                
+
+                 
                    Console.WriteLine("=================   This is the item left from inventory cart ==========\n");
                
                 Console.WriteLine($" Product Brand    -[{(m.ProductBrand )}]");
@@ -101,9 +127,11 @@ namespace UI
                 Console.WriteLine($" Price            -[{(ppp )}]");
                 Console.WriteLine($"Availble Quanity  -[{( diff)}]");
                 Console.WriteLine($"Location          -[{( ll )}]");
+                 order =orderBL.NewOrder(pid,orderCusomerID,diff,quantity,ll);
                 newProduct = productBL.ProductUpdate(m.ProductBrand,m.Catgory,ppp,diff,ll);
                 newProduct = productBL.P_QuantityUpdate(diff,m.ProductBrand);
                  Console.WriteLine("=================   This is the item left from inventory cart    ==========\n");
+
                  
                // Console.WriteLine ($"Brand:{pid}ID:{orderCusomerID}Price:{ppp}Quantity:{quantity}Location{ll}");
                 Console.WriteLine("=================You made an order ! ========================\n");
@@ -113,9 +141,11 @@ namespace UI
 
 
                  }
+                 else if (answer == "no")
+                 {
+                   Program pp=new Program();
+                 }
                 
-                 
-                  
           }
             
 
