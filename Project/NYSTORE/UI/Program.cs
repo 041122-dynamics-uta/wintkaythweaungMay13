@@ -157,7 +157,7 @@ namespace UI
         moveOn=true;
            
         }//main method
-        Program p=new Program();
+       // Program p=new Program();
       }//class
             
   }//namespace
